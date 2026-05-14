@@ -1,15 +1,15 @@
 - name: Deploy Maven Artifact (Jenkins User Accessible)
   hosts: localhost
-  become: yes  # Run tasks with sudo privileges
+  become: no  # Run tasks with sudo privileges
   tasks:
     - name: Ensure deployment directory exists
       ansible.builtin.file:
-        path: C:\Users\atme\Desktop\4AD23CS030\HelloMaven_Main\target\destination
+        path: C:\Users\atme\Desktop\4AD23CS030\destination
         state: directory
         mode: '0755'
 
     - name: Copy the artifact to the deployment directory
       ansible.builtin.copy:
-        src: C:\Users\atme\Desktop\4AD23CS030\HelloMaven_Main\target\HelloMaven-1.0-SNAPSHOT.jar  # Path to your JAR file in the local system
-        dest: C:\Users\atme\Desktop\4AD23CS030\HelloMaven_Main\target\destination  # Where you want to copy the JAR on the local machine
+        src: mnt\C\Users\atme\Desktop\4AD23CS030\HelloMaven_Main\target\HelloMaven-1.0-SNAPSHOT.jar  # Path to your JAR file in the local system
+        dest: C:\Users\atme\Desktop\4AD23CS030\destination  # Where you want to copy the JAR on the local machine
         remote_src: no  # Indicates the source is on the local machine
