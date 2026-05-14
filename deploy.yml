@@ -1,6 +1,6 @@
 - name: Deploy Maven Artifact (Jenkins User Accessible)
   hosts: localhost
-  become: yes  # Run tasks with sudo privileges
+  become: no  # Run tasks with sudo privileges
   tasks:
     - name: Ensure deployment directory exists
       ansible.builtin.file:
