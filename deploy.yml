@@ -4,12 +4,12 @@
   tasks:
     - name: Ensure deployment directory exists
       ansible.builtin.file:
-        path: C:\Users\atme\Desktop\4AD23CS030\destination
+        path: /home/thejan/deployment
         state: directory
         mode: '0755'
 
     - name: Copy the artifact to the deployment directory
       ansible.builtin.copy:
         src:  /mnt/c/Users/atme/.jenkins/workspace/p8_CI/target/HelloMavenA2-1.0-SNAPSHOT.jar  # Path to your JAR file in the local system
-        dest: C:\Users\atme\Desktop\4AD23CS030\destination  # Where you want to copy the JAR on the local machine
+        dest: /home/thejan/deployment  # Where you want to copy the JAR on the local machine
         remote_src: yes # Indicates the source is on the local machine
