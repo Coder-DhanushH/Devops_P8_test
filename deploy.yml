@@ -4,7 +4,7 @@
   tasks:
     - name: Ensure deployment directory exists
       ansible.builtin.file:
-        path: C:\Users\atme\Desktop\102\HelloMaven\target\destination
+        path: C:\Users\atme\Desktop\4AD23CS030\HelloMaven_Main\target\destination
         state: directory
         mode: '0755'
 
